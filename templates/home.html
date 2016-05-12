@@ -1,0 +1,82 @@
+   <div layout="column"  ng-controller="homeCtrl">
+       <md-toolbar class="">
+           <div class="md-toolbar-tools">
+               <span >PanaCloud Project</span>
+
+               <span flex></span>
+               <label >Enter Your Work::</label>
+               <span> <input type="text" ng-model="user.name"> </span>
+               <md-button class="md-accent md-raised md-hue-1" ng-click="addFemale(user)">
+                   Add Your Work
+               </md-button>
+           </div>
+       </md-toolbar>
+       <br/>  <br/>
+
+<div layout="row">
+    
+    <md-content class="md-padding"  ui-on-Drop="onDrop1($event,$data,add)">
+              <md-card>
+         <md-toolbar md-no-ink class="md-primary"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Add</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="ad" on-drop-success="dropSuccessHandler($event,$index,add)" ng-repeat="ad in add track by $index">
+    {{ad.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
+  <!--=======================================================================================================-->
+  
+   <md-content class="md-padding"  ui-on-Drop="onDrop($event,$data,diong)">
+              <md-card>
+         <md-toolbar class="md-accent md-raised md-hue-1"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Doing</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="do" on-drop-success="dropSuccessHandler($event,$index,diong)" ng-repeat="do in diong track by $index">
+    {{do.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
+  
+   <!--=======================================================================================================-->
+  
+   <md-content class="md-padding"  ui-on-Drop="onDrop2($event,$data,review)">
+              <md-card>
+         <md-toolbar class="md-warn md-raised md-hue-2"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Review</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="rev" on-drop-success="dropSuccessHandler($event,$index,review)" ng-repeat="rev in review track by $index">
+    {{rev.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
+  
+    <!--=======================================================================================================-->
+  
+    <md-content class="md-padding"  ui-on-Drop="onDrop3($event,$data,done)">
+              <md-card>
+         <md-toolbar class="md-primary md-hue-1"  style="width:300px">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Done</h2>
+    </div>
+  </md-toolbar>
+  <md-card>
+  <md-list-item  class="secondary-button-padding" ng-click="doPrimaryAction()" ui-draggable="true" drag="do" on-drop-success="dropSuccessHandler($event,$index,done)" ng-repeat="do in done track by $index">
+    {{do.name}}
+  </md-list-item> </md-card>
+      </md-card>
+  </md-content>
+
+  
+</div>
+ 
+
